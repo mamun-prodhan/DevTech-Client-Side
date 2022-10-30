@@ -7,7 +7,7 @@ const Courses = () => {
     return (
         <Container>
             <Row>
-                <Col className='d-none d-lg-block' lg="3">
+                <Col className='bg-danger d-none d-lg-block' lg="3">
                     <LeftSideNav></LeftSideNav>
                 </Col>
                 <Col className='' lg="9">

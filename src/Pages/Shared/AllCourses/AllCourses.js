@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const AllCourses = ({ course }) => {
     console.log(course);
@@ -17,7 +18,8 @@ const AllCourses = ({ course }) => {
                 lead-in to additional content. This content is a little bit
                 longer.
               </Card.Text>
-              <Button variant="outline-primary">Primary</Button>
+              
+              <Link to={`/course/${course.course_id}`}><Button variant="outline-primary">Primary</Button></Link>
             </Card.Body>
           </Card>
         </Col>

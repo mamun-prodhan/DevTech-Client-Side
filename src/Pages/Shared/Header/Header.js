@@ -9,12 +9,12 @@ const Header = () => {
     return (
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand><Link to='/'>DevTech</Link></Navbar.Brand>
+                <Navbar.Brand><Link to='/' className='text-decoration-none'>DevTech</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#courses">Courses</Nav.Link>
+                        {/* <Nav.Link><Link to='/' className='text-decoration-none'>Home</Link></Nav.Link> */}
+                        <Nav.Link><Link to='/' className='text-decoration-none'>Courses</Link></Nav.Link>
                         <Nav.Link href="#blog">Blog</Nav.Link>
                         <Nav.Link href="#faq">FAQ</Nav.Link>
                     </Nav>

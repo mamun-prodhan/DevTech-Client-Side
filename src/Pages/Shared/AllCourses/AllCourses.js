@@ -21,8 +21,7 @@ const AllCourses = ({ course }) => {
                 <p>{details}</p>
                 }
               </Card.Text>
-              
-              <Link to={`/course/${course.course_id}`}><Button variant="outline-primary">Primary</Button></Link>
+              <Link to={`/course/${course.course_id}`}><Button variant="outline-primary fw-bold">Details</Button></Link>
             </Card.Body>
           </Card>
         </Col>

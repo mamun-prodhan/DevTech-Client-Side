@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub } from "react-icons/fa";
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-
+    const [error, setError] = useState('');
     const { providerLogin, signIn} = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -30,14 +30,19 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
         signIn(email, password)
         .then(result =>{
             const user = result.user;
             console.log(user);
             form.reset();
+            setError('');
             navigate('/');
         })
-        .catch(error => console.error(error))
+        .catch(error => {
+            console.error(error)
+            setError(error.message);
+        })
     }
 
     return (
@@ -54,10 +59,10 @@ const Login = () => {
                     <Form.Control name="password" type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Text className="text-danger">
-                        We'll never share your email with anyone else.
+                    {error}
                 </Form.Text>
                 <br/>
-                <Button variant="primary" type="submit">
+                <Button className='mt-2' variant="primary" type="submit">
                     Login
                 </Button>
             </Form>

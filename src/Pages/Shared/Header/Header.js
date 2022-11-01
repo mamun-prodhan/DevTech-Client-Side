@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -12,11 +12,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import logo from '../../../../src/assets/logo.ico'
+import ReactSwitch from 'react-switch';
+import { FaSun, FaMoon } from "react-icons/fa";
 
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const [theme, setTheme] = useState("light");
+    const toggleTheme = () =>{
+        setTheme((curr)=>(curr === "light" ? "dark" : "light"));
+    }
 
     // tooltips
     const renderTooltip = props => (
@@ -44,6 +50,10 @@ const Header = () => {
                         <Link to='/faq'><Button className='me-3 fw-bold text-white' variant='outline-primary'>FAQ</Button></Link>
                     </Nav>
                     <Nav>
+                        <Nav.Link>
+                            <label className='fw-bold text-white me-2'>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+                            <Button className='text-white' onClick={toggleTheme} variant='outline-primary'>{theme === "light" ? <FaSun></FaSun> : <FaMoon></FaMoon>} </Button>
+                        </Nav.Link>
                         <Nav.Link href="#deets">
                             {
                                 user?.uid ?

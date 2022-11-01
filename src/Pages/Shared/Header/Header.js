@@ -41,8 +41,8 @@ const Header = () => {
                                 </>
                                 :
                                 <>
-                                    <Link to='/login'>Login</Link>
-                                    <Link to='/register'>Register</Link>
+                                    <Link to='/login'><Button className='me-3' variant='outline-primary'>Login</Button></Link>
+                                    <Link to='/register'><Button variant='outline-primary'>Register</Button></Link>
                                 </>
                             }
                         </Nav.Link>
@@ -56,8 +56,8 @@ const Header = () => {
                             : <FaUser></FaUser>    
                         }
                         </Nav.Link>
-                        <Nav.Link><Link to='/login' className='text-decoration-none'>Login</Link></Nav.Link>
-                        <Nav.Link><Link to='/register' className='text-decoration-none'>Register</Link></Nav.Link>
+                        {/* <Nav.Link><Link to='/login' className='text-decoration-none'>Login</Link></Nav.Link>
+                        <Nav.Link><Link to='/register' className='text-decoration-none'>Register</Link></Nav.Link> */}
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftSideNav></LeftSideNav>

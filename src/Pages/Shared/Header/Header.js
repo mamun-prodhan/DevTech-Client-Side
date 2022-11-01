@@ -8,11 +8,20 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Login from '../../Login/Login';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
+import "bootstrap/dist/css/bootstrap.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+
+    // tooltips
+    const renderTooltip = props => (
+        <Tooltip {...props}>{user?.displayName}</Tooltip>
+    );
+    //end tooltips
 
     const handleLogOut = () => {
         logOut()
@@ -37,7 +46,7 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <span>{user?.displayName}</span>
+                                        {/* <span>{user?.displayName}</span> */}
                                         <Button onClick={handleLogOut} className='ms-3' variant='outline-primary'>LogOut</Button>
                                     </>
                                     :
@@ -48,6 +57,7 @@ const Header = () => {
                             }
                         </Nav.Link>
                         <Nav.Link href="#deets">
+                            <OverlayTrigger placement="bottom" overlay={renderTooltip}>
                                 {user?.photoURL ?
                                     <Image
                                         style={{ height: '30px' }}
@@ -56,6 +66,7 @@ const Header = () => {
                                     </Image>
                                     : <FaUser></FaUser>
                                 }
+                            </OverlayTrigger>
                         </Nav.Link>
                         {/* <Nav.Link><Link to='/login' className='text-decoration-none'>Login</Link></Nav.Link>
                         <Nav.Link><Link to='/register' className='text-decoration-none'>Register</Link></Nav.Link> */}

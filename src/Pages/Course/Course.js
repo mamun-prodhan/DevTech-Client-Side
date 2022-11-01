@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import { FaFilePdf } from "react-icons/fa";
 
 const Course = () => {
     const course = useLoaderData();
@@ -13,6 +14,9 @@ const Course = () => {
             <Card className="text-center">
                 {/* <Card.Header>Featured</Card.Header> */}
                 <Card.Body>
+                    <div className='text-end mb-3'>
+                    <Button variant="primary"><FaFilePdf className='me-2'></FaFilePdf>Download PDF</Button>
+                    </div>
                     <Card.Img variant='top' src={image_url} />
                     <Card.Title className='mt-3 mb-3 fs-2'>{title}</Card.Title>
                     <Card.Text>
@@ -49,7 +53,6 @@ const Course = () => {
                         <p className='fw-bold'>{enrolled} Students</p>
                     </div>
                     </div>
-
                 </Card.Footer>
             </Card>
         </Container>

@@ -6,13 +6,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import Login from '../../Login/Login';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 import "bootstrap/dist/css/bootstrap.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import logo from '../../../../src/assets/logo.ico'
-import ReactSwitch from 'react-switch';
 import { FaSun, FaMoon } from "react-icons/fa";
 
 
@@ -24,11 +22,9 @@ const Header = () => {
         setTheme((curr)=>(curr === "light" ? "dark" : "light"));
     }
 
-    // tooltips
     const renderTooltip = props => (
         <Tooltip {...props}>{user?.displayName}</Tooltip>
     );
-    //end tooltips
 
     const handleLogOut = () => {
         logOut()
@@ -44,7 +40,6 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        {/* <Nav.Link><Link to='/' className='text-decoration-none'>Home</Link></Nav.Link> */}
                         <Link to='/'><Button className='me-3 fw-bold text-white' variant='outline-primary'>Courses</Button></Link>
                         <Link to='/blog'><Button className='me-3 fw-bold text-white' variant='outline-primary'>Blog</Button></Link>
                         <Link to='/faq'><Button className='me-3 fw-bold text-white' variant='outline-primary'>FAQ</Button></Link>
@@ -54,11 +49,10 @@ const Header = () => {
                             <label className='fw-bold text-white me-2'>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
                             <Button className='text-white' onClick={toggleTheme} variant='outline-primary'>{theme === "light" ? <FaSun></FaSun> : <FaMoon></FaMoon>} </Button>
                         </Nav.Link>
-                        <Nav.Link href="#deets">
+                        <Nav.Link>
                             {
                                 user?.uid ?
                                     <>
-                                        {/* <span>{user?.displayName}</span> */}
                                         <Button onClick={handleLogOut} className='ms-3 fw-bold text-white' variant='outline-primary'>LogOut</Button>
                                     </>
                                     :
@@ -68,7 +62,7 @@ const Header = () => {
                                     </>
                             }
                         </Nav.Link>
-                        <Nav.Link href="#deets">
+                        <Nav.Link>
                             <OverlayTrigger placement="bottom" overlay={renderTooltip}>
                                 {user?.photoURL ?
                                     <Image
@@ -80,9 +74,6 @@ const Header = () => {
                                 }
                             </OverlayTrigger>
                         </Nav.Link>
-                        {/* <Nav.Link><Link to='/login' className='text-decoration-none'>Login</Link></Nav.Link>
-                        <Nav.Link><Link to='/register' className='text-decoration-none'>Register</Link></Nav.Link> */}
-
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftSideNav></LeftSideNav>

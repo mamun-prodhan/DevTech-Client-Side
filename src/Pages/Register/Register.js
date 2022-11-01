@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -70,6 +71,10 @@ const Register = () => {
                     {error}
                 </Form.Text>
                 <br />
+
+                <div className=''>
+                    <p>Already Have an Account ! <Link to='/login' className='fw-bold'> Login</Link></p>
+                </div>
 
                 <Button className='mt-2' variant="primary" type="submit">
                     Register

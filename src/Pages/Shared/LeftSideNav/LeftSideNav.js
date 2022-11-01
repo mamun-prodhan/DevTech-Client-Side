@@ -11,7 +11,7 @@ const LeftSideNav = () => {
     })
 
     return (
-        <div>
+        <div  className='text-start'>
             <h4>All Courses : {courses.length}</h4>
             <div>
                 {

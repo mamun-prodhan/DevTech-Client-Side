@@ -11,6 +11,7 @@ import LeftSideNav from '../LeftSideNav/LeftSideNav';
 import "bootstrap/dist/css/bootstrap.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import logo from '../../../../src/assets/logo.ico'
 
 
 const Header = () => {
@@ -32,14 +33,15 @@ const Header = () => {
     return (
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand><Link to='/' className='text-decoration-none'>DevTech</Link></Navbar.Brand>
+                <img className='me-3' style={{height:'35px'}} src={logo} alt="" />
+                <Navbar.Brand><Link to='/' className='text-decoration-none fs-4 fw-bold text-white'>DevTech</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         {/* <Nav.Link><Link to='/' className='text-decoration-none'>Home</Link></Nav.Link> */}
-                        <Nav.Link><Link to='/' className='text-decoration-none'>Courses</Link></Nav.Link>
-                        <Nav.Link href="#blog">Blog</Nav.Link>
-                        <Nav.Link href="#faq">FAQ</Nav.Link>
+                        <Link to='/'><Button className='me-3 fw-bold text-white' variant='outline-primary'>Courses</Button></Link>
+                        <Link to='/blog'><Button className='me-3 fw-bold text-white' variant='outline-primary'>Blog</Button></Link>
+                        <Link to='/faq'><Button className='me-3 fw-bold text-white' variant='outline-primary'>FAQ</Button></Link>
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">
@@ -47,12 +49,12 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                         {/* <span>{user?.displayName}</span> */}
-                                        <Button onClick={handleLogOut} className='ms-3' variant='outline-primary'>LogOut</Button>
+                                        <Button onClick={handleLogOut} className='ms-3 fw-bold text-white' variant='outline-primary'>LogOut</Button>
                                     </>
                                     :
                                     <>
-                                        <Link to='/login'><Button className='me-3' variant='outline-primary'>Login</Button></Link>
-                                        <Link to='/register'><Button variant='outline-primary'>Register</Button></Link>
+                                        <Link to='/login'><Button className='me-3 fw-bold text-white' variant='outline-primary'>Login</Button></Link>
+                                        <Link to='/register'><Button className='fw-bold text-white' variant='outline-primary'>Register</Button></Link>
                                     </>
                             }
                         </Nav.Link>
@@ -64,7 +66,7 @@ const Header = () => {
                                         roundedCircle
                                         src={user.photoURL}>
                                     </Image>
-                                    : <FaUser></FaUser>
+                                    : <FaUser className='text-white'></FaUser>
                                 }
                             </OverlayTrigger>
                         </Nav.Link>

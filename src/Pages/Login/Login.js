@@ -6,7 +6,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Form from 'react-bootstrap/Form';
 import { Container } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -79,15 +79,19 @@ const Login = () => {
                     {error}
                 </Form.Text>
                 <br/>
-                <Button className='mt-2' variant="primary" type="submit">
+                <div className=''>
+                    <p>Don't Have an Account ! <Link to='/register' className='fw-bold'> Create Account</Link></p>
+                </div>
+                <Button className='' variant="primary" type="submit">
                     Login
                 </Button>
+                
             </Form>
             </Container>
             {/* Google and Github login Section */}
-            <ButtonGroup vertical>
+            <ButtonGroup className='mt-4' vertical>
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant='outline-primary'><FaGoogle></FaGoogle> Login With Google</Button>
-                <Button onClick={handleGithubSignIn} variant='outline-primary'><FaGithub></FaGithub> Login With Github</Button>
+                <Button onClick={handleGithubSignIn} variant='outline-dark'><FaGithub></FaGithub> Login With Github</Button>
             </ButtonGroup>
         </div>
     );

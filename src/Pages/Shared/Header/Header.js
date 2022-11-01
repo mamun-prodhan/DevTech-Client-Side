@@ -9,14 +9,15 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Login from '../../Login/Login';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 
+
 const Header = () => {
 
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then( () =>{})
-        .catch( error => console.error(error))
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -35,29 +36,30 @@ const Header = () => {
                         <Nav.Link href="#deets">
                             {
                                 user?.uid ?
-                                <>
-                                    <span>{user?.displayName}</span>
-                                    <Button onClick={handleLogOut} className='ms-3' variant='outline-primary'>LogOut</Button>
-                                </>
-                                :
-                                <>
-                                    <Link to='/login'><Button className='me-3' variant='outline-primary'>Login</Button></Link>
-                                    <Link to='/register'><Button variant='outline-primary'>Register</Button></Link>
-                                </>
+                                    <>
+                                        <span>{user?.displayName}</span>
+                                        <Button onClick={handleLogOut} className='ms-3' variant='outline-primary'>LogOut</Button>
+                                    </>
+                                    :
+                                    <>
+                                        <Link to='/login'><Button className='me-3' variant='outline-primary'>Login</Button></Link>
+                                        <Link to='/register'><Button variant='outline-primary'>Register</Button></Link>
+                                    </>
                             }
                         </Nav.Link>
                         <Nav.Link href="#deets">
-                            {user?.photoURL ?
-                            <Image 
-                            style={{height: '30px'}} 
-                            roundedCircle 
-                            src={user.photoURL}>  
-                            </Image>
-                            : <FaUser></FaUser>    
-                        }
+                                {user?.photoURL ?
+                                    <Image
+                                        style={{ height: '30px' }}
+                                        roundedCircle
+                                        src={user.photoURL}>
+                                    </Image>
+                                    : <FaUser></FaUser>
+                                }
                         </Nav.Link>
                         {/* <Nav.Link><Link to='/login' className='text-decoration-none'>Login</Link></Nav.Link>
                         <Nav.Link><Link to='/register' className='text-decoration-none'>Register</Link></Nav.Link> */}
+
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftSideNav></LeftSideNav>

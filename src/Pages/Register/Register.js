@@ -6,9 +6,9 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const {createUser} = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
-    const handleSubmit = event =>{
+    const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -18,16 +18,28 @@ const Register = () => {
         console.log(name, photoURL, email, password);
 
         createUser(email, password)
-        .then( result => {
-            const user = result.user;
-            console.log(user);
-            setError('');
-            form.reset();
-        })
-        .catch( e => {
-            console.error(e);
-            setError(e.message);
-        });
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                form.reset();
+                handleUpdateUserProfile(name, photoURL);
+            })
+            .catch(e => {
+                console.error(e);
+                setError(e.message);
+            });
+    }
+
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
 
@@ -57,13 +69,13 @@ const Register = () => {
                 <Form.Text className="text-danger">
                     {error}
                 </Form.Text>
-                <br/>
+                <br />
 
                 <Button className='mt-2' variant="primary" type="submit">
                     Register
                 </Button>
             </Form>
-            </Container>
+        </Container>
     );
 };
 

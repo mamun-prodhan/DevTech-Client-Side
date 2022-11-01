@@ -6,7 +6,10 @@ import Courses from "../../Pages/Courses/Courses";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import CourseDetails from "../../Pages/Shared/CourseDetails/CourseDetails";
+import CustomRoute from "../../Pages/Shared/CustomRoute/CustomRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Blog from "../../Pages/Blog/Blog";
+import Faq from "../../Pages/Faq/Faq";
 
 export const routes = createBrowserRouter([
     {
@@ -38,8 +41,20 @@ export const routes = createBrowserRouter([
                 element: <Login></Login>
             },
             {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
+            },
+            {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '*',
+                element: <CustomRoute></CustomRoute>
             }
         ]
     }

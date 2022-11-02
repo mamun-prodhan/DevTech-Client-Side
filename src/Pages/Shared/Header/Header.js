@@ -47,7 +47,7 @@ const Header = () => {
                     <Nav>
                         <Nav.Link>
                             <label className='fw-bold text-white me-2'>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
-                            <Button className='text-white' onClick={toggleTheme} variant='outline-primary'>{theme === "light" ? <FaSun></FaSun> : <FaMoon></FaMoon>} </Button>
+                            <Button className='text-white' onClick={toggleTheme} variant='outline-primary'>{theme === "light" ? <FaSun className='text-warning'></FaSun> : <FaMoon></FaMoon>} </Button>
                         </Nav.Link>
                         <Nav.Link>
                             {

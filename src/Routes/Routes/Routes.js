@@ -18,17 +18,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://assignment-10-server-rust.vercel.app/courses')
             },
             {
                 path: '/course/:id',
                 element: <Course></Course>,
-                loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-10-server-rust.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/details/:id',
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-10-server-rust.vercel.app/details/${params.id}`)
             },
             {
                 path: '/login',

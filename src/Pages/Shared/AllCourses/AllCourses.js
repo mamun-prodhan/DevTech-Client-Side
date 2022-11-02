@@ -15,9 +15,9 @@ const AllCourses = ({ course }) => {
           <Card.Title>{title}</Card.Title>
           <Card.Text>
             {details.length > 60 ?
-              <p>{details.slice(0, 60) + '...'}</p>
+              <>{details.slice(0, 60) + '...'}</>
               :
-              <p>{details}</p>
+              details
             }
           </Card.Text>
           <Link to={`/course/${course.course_id}`}><Button variant="outline-primary fw-bold">Details</Button></Link>

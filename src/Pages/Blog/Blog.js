@@ -9,7 +9,7 @@ const Blog = () => {
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>What is Cors ?</Accordion.Header>
                     <Accordion.Body>
-                    CORS stands for Cross-Origin Resource Sharing. It allows you to make requests from one website to another website in the browser, which is normally prohibited by another browser policy called the Same-Origin Policy.
+                    <span className='fw-bold'>CORS stands for</span> Cross-Origin Resource Sharing. It allows you to make requests from one website to another website in the browser, which is normally prohibited by another browser policy called the Same-Origin Policy.
                     Cross-Origin Resource Sharing, CORS is an HTTP-header based mechanism that allows a server to indicate any origins like domain, scheme, or port other than its own from which a browser should permit loading resources. CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request. 
                     </Accordion.Body>
                 </Accordion.Item>
@@ -43,14 +43,14 @@ const Blog = () => {
                 <Accordion.Item eventKey="2">
                     <Accordion.Header>How does the Private Route work?</Accordion.Header>
                     <Accordion.Body>
-                    The react private route component renders child components if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property. <br />
+                    <span className='fw-bold'>The react private route</span> component renders child components if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property. <br />
                     The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated or Logged in.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="4">
                     <Accordion.Header>What is Node? How does Node work?</Accordion.Header>
                     <Accordion.Body>
-                    Node is an open source development platform for executing JavaScript code server-side. Node is useful for developing applications that require a persistent connection from the browser to the server and is often used for real-time applications such as chat, news feeds and web push notifications. Node. js is a JavaScript runtime environment that achieves low latency and high throughput by taking a non-blocking approach to serving requests. In other words, Node. js wastes no time or resources on waiting for I/O requests to return.
+                    <span className='fw-bold'>Node</span> is an open source development platform for executing JavaScript code server-side. Node is useful for developing applications that require a persistent connection from the browser to the server and is often used for real-time applications such as chat, news feeds and web push notifications. Node. js is a JavaScript runtime environment that achieves low latency and high throughput by taking a non-blocking approach to serving requests. In other words, Node. js wastes no time or resources on waiting for I/O requests to return.
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

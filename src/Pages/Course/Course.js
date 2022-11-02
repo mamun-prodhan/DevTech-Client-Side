@@ -20,7 +20,7 @@ const Course = () => {
     return (
         <div>
             <Container className='text-end mb-3'>
-            <ReactToPdf targetRef={ref} filename="div-blue.pdf" options={options} x={.5} y={.5} scale={0.8}>
+            <ReactToPdf targetRef={ref} filename="DevTech-Course-Details.pdf" options={options} x={.5} y={.5} scale={0.8}>
                 {({ toPdf }) => (
                         <Button onClick={toPdf} variant="primary"><FaFilePdf className='me-2'></FaFilePdf>Download PDF</Button>
                 )}

@@ -8,7 +8,7 @@ const CustomRoute = () => {
         <div>
             <h3 className='fw-bold'>Page Not Found</h3>
             <div className='mt-3 mb-3'>
-            <Link to='/'><Button className='fw-bold' variant='outline-primary'>Back To Home</Button></Link>
+                <Link to='/'><Button className='fw-bold' variant='outline-primary'>Back To Home</Button></Link>
             </div>
             <img src={errorImage} alt="" />
         </div>

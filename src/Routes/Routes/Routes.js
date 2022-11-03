@@ -23,12 +23,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/course/:id',
                 element: <Course></Course>,
-                loader: ({params}) => fetch(`https://assignment-10-server-rust.vercel.app/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-rust.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/details/:id',
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`https://assignment-10-server-rust.vercel.app/details/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-rust.vercel.app/details/${params.id}`)
             },
             {
                 path: '/login',

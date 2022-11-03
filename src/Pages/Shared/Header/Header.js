@@ -18,8 +18,8 @@ const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
     const [theme, setTheme] = useState("light");
-    const toggleTheme = () =>{
-        setTheme((curr)=>(curr === "light" ? "dark" : "light"));
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark" : "light"));
     }
 
     const renderTooltip = props => (
@@ -35,7 +35,7 @@ const Header = () => {
     return (
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <img className='me-3' style={{height:'35px'}} src={logo} alt="" />
+                <img className='me-3' style={{ height: '35px' }} src={logo} alt="" />
                 <Navbar.Brand><Link to='/' className='text-decoration-none fs-4 fw-bold text-white'>DevTech</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

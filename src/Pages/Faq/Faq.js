@@ -27,13 +27,13 @@ const Faq = () => {
                 <Accordion.Item eventKey="3">
                     <Accordion.Header>What is environment variable?</Accordion.Header>
                     <Accordion.Body>
-                    When working with React, environment variables are variables that are available through a global process. env Object. That global Object is provided by our environment through NodeJs. And because we don't have NodeJs in the browser, we're going to need webpack.
+                        When working with React, environment variables are variables that are available through a global process. env Object. That global Object is provided by our environment through NodeJs. And because we don't have NodeJs in the browser, we're going to need webpack.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="4">
                     <Accordion.Header>What is Firebase authentication?</Accordion.Header>
                     <Accordion.Body>
-                    Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to our app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more.
+                        Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to our app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more.
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

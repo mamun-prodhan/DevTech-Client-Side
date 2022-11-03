@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
-    const {title, thumbnail_url, details} = courseDetails;
+    const { title, thumbnail_url, details } = courseDetails;
     return (
         <Container>
             <Card className="text-center">
